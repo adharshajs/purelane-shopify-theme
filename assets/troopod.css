@@ -1,0 +1,2874 @@
+.troopod-hero{
+  background:#eef7ef;
+  padding:90px 0;
+}
+
+.troopod-hero .page-width{
+  max-width:1200px;
+  margin:auto;
+}
+
+.hero-content{
+  max-width:600px;
+}
+
+.hero-label{
+  color:#2f8f57;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.hero-title{
+  font-size:64px;
+  line-height:1.1;
+  font-weight:700;
+  margin:18px 0;
+}
+
+.hero-description{
+  font-size:20px;
+  color:#666;
+  margin-bottom:30px;
+}
+
+.hero-button{
+  display:inline-block;
+  background:#1f8f55;
+  color:#fff;
+  padding:15px 35px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.hero-button:hover{
+  background:#166b40;
+}
+
+@media(max-width:768px){
+
+.hero-title{
+font-size:42px;
+}
+
+.hero-description{
+font-size:17px;
+}
+
+.troopod-hero{
+padding:60px 20px;
+}
+
+}
+.hero-wrapper{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:60px;
+}
+
+.hero-content{
+flex:1;
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.hero-image img{
+max-width:100%;
+border-radius:20px;
+}
+
+.image-placeholder{
+height:500px;
+width:100%;
+background:#dfeede;
+border:3px dashed #9cc79f;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+font-weight:700;
+border-radius:20px;
+color:#4d7b56;
+}
+
+.hero-buttons{
+display:flex;
+gap:18px;
+margin-top:30px;
+}
+
+.hero-secondary-button{
+padding:15px 35px;
+border:2px solid #1f8f55;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+color:#1f8f55;
+}
+
+@media(max-width:768px){
+
+.hero-wrapper{
+flex-direction:column;
+}
+
+.hero-content{
+text-align:center;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+}
+.hero-features{
+display:flex;
+gap:20px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.feature{
+background:white;
+padding:12px 18px;
+border-radius:50px;
+font-weight:600;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.hero-secondary-button:hover{
+background:#1f8f55;
+color:white;
+transition:.3s;
+}
+.product-card{
+background:white;
+border-radius:30px;
+padding:50px;
+box-shadow:0 25px 60px rgba(0,0,0,.08);
+position:relative;
+text-align:center;
+width:420px;
+margin:auto;
+}
+
+.product-bottle{
+font-size:120px;
+}
+
+.product-info h3{
+margin-top:20px;
+font-size:28px;
+}
+
+.product-info p{
+color:#666;
+}
+
+.review-card{
+position:absolute;
+top:40px;
+left:-40px;
+background:white;
+padding:15px 20px;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+font-weight:600;
+}
+
+.badge-card{
+position:absolute;
+bottom:40px;
+right:-40px;
+background:#1f8f55;
+color:white;
+padding:20px;
+border-radius:20px;
+font-weight:bold;
+text-align:center;
+}
+/* =========================================================
+   TROOPOD HERO — FINAL HERO STYLING
+   ========================================================= */
+
+.troopod-hero {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 45%, rgba(52, 115, 78, 0.35), transparent 35%),
+    linear-gradient(135deg, #102d24 0%, #173c2d 48%, #0b241c 100%);
+  color: #ffffff;
+}
+
+.troopod-hero-grid {
+  position: relative;
+  min-height: 100svh;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 100px 6vw 70px;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.85fr) minmax(420px, 1.15fr);
+  align-items: center;
+  gap: 40px;
+}
+
+/* ---------------------------------------------------------
+   LEFT COPY
+   --------------------------------------------------------- */
+
+.troopod-hero-copy {
+  position: relative;
+  z-index: 5;
+  max-width: 600px;
+}
+
+.troopod-hero-title {
+  margin: 0;
+  font-size: clamp(64px, 8vw, 128px);
+  line-height: 0.82;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+  color: #f5f0df;
+}
+
+.troopod-hero-title span {
+  color: #a7c99e;
+}
+
+.troopod-hero-lede {
+  max-width: 510px;
+  margin: 32px 0 0;
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.troopod-hero-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 260px;
+  margin: 30px 0 0;
+}
+
+.troopod-hero-rule i {
+  display: block;
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.troopod-hero-rule svg {
+  width: 22px;
+  height: 22px;
+  color: #a7c99e;
+}
+
+.troopod-hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.troopod-btn {
+  min-height: 52px;
+  padding: 14px 25px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.troopod-btn:hover {
+  transform: translateY(-2px);
+}
+
+.troopod-btn-primary {
+  background: #e8dfbd;
+  color: #17382b;
+}
+
+.troopod-btn-primary:hover {
+  background: #f5eccb;
+}
+
+.troopod-btn-primary svg {
+  width: 18px;
+  height: 18px;
+}
+
+.troopod-btn-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.troopod-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------------------------------------------------------
+   DESKTOP PROMISE BADGES
+   --------------------------------------------------------- */
+
+.troopod-hero-badges {
+  position: absolute;
+  top: 105px;
+  left: 6vw;
+  z-index: 7;
+  display: flex;
+  gap: 12px;
+}
+
+.troopod-hero-badge {
+  min-width: 145px;
+  min-height: 64px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.troopod-badge-icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(167, 201, 158, 0.13);
+  color: #b5d5a8;
+}
+
+.troopod-badge-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT STAGE
+   --------------------------------------------------------- */
+
+.troopod-hero-product {
+  position: relative;
+  min-height: 650px;
+  z-index: 3;
+}
+
+.troopod-product-stage {
+  position: relative;
+  width: 100%;
+  height: 650px;
+}
+
+.troopod-product-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.97);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    visibility 0.55s ease;
+}
+
+.troopod-product-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* ---------------------------------------------------------
+   PRODUCT IMAGES
+   --------------------------------------------------------- */
+
+.troopod-product-image {
+  position: absolute;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  filter: drop-shadow(0 28px 25px rgba(0, 0, 0, 0.28));
+}
+
+/*
+  IMPORTANT:
+  These classes are intentionally separated from the
+  HTML because the prototype's product illustrations
+  are embedded SVG assets in the original CSS.
+*/
+
+.troopod-product-kitchen {
+  width: 340px;
+  height: 500px;
+  left: 50%;
+  top: 55px;
+  transform: translateX(-50%);
+}
+
+.troopod-product-tap {
+  width: 290px;
+  height: 470px;
+  left: 28%;
+  top: 75px;
+  transform: translateX(-50%);
+}
+
+.troopod-product-metal {
+  width: 280px;
+  height: 440px;
+  left: 72%;
+  top: 95px;
+  transform: translateX(-50%);
+}
+
+.troopod-product-two {
+  left: 65%;
+  top: 100px;
+  transform: translateX(-50%) rotate(5deg);
+}
+
+.troopod-product-three {
+  left: 50%;
+  top: 150px;
+  transform: translateX(-50%) rotate(-5deg);
+  z-index: 4;
+}
+
+/* ---------------------------------------------------------
+   PRICE CARDS
+   --------------------------------------------------------- */
+
+.troopod-price-card {
+  position: absolute;
+  left: 50%;
+  bottom: 80px;
+  transform: translateX(-50%);
+  z-index: 10;
+  min-width: 215px;
+  padding: 15px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background: rgba(20, 47, 36, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.troopod-price-label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+}
+
+.troopod-price-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.troopod-price-value strong {
+  color: #f2e8c5;
+  font-size: 25px;
+}
+
+.troopod-price-value s {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.troopod-price-off {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(167, 201, 158, 0.16);
+  color: #b9d8ae;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT DOTS
+   --------------------------------------------------------- */
+
+.troopod-product-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 15;
+}
+
+.troopod-product-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.troopod-product-dots button.is-active {
+  width: 28px;
+  border-radius: 10px;
+  background: #d9d0aa;
+}
+
+/* ---------------------------------------------------------
+   MOBILE BADGE STRIP
+   --------------------------------------------------------- */
+
+.troopod-badge-strip {
+  display: none;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 1000px) {
+
+  .troopod-hero-grid {
+    grid-template-columns: 1fr;
+    padding-top: 150px;
+  }
+
+  .troopod-hero-copy {
+    max-width: 700px;
+  }
+
+  .troopod-hero-product {
+    min-height: 600px;
+  }
+
+  .troopod-product-stage {
+    height: 600px;
+  }
+
+  .troopod-hero-badges {
+    left: 5vw;
+  }
+
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-hero {
+    min-height: auto;
+  }
+
+  .troopod-hero-grid {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 105px 20px 35px;
+  }
+
+  .troopod-hero-badges {
+    display: none;
+  }
+
+  .troopod-hero-copy {
+    max-width: none;
+    text-align: center;
+  }
+
+  .troopod-hero-title {
+    font-size: clamp(62px, 20vw, 92px);
+    line-height: 0.84;
+  }
+
+  .troopod-hero-rule {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .troopod-hero-lede {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+  }
+
+  .troopod-hero-cta {
+    justify-content: center;
+  }
+
+  .troopod-btn {
+    min-height: 48px;
+    padding: 12px 20px;
+  }
+
+  .troopod-badge-strip {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+
+  .troopod-badge-strip > div {
+    min-height: 66px;
+    padding: 8px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 9px;
+    line-height: 1.2;
+  }
+
+  .troopod-badge-strip svg {
+    width: 20px;
+    height: 20px;
+    color: #b5d5a8;
+  }
+
+  .troopod-hero-product {
+    min-height: 520px;
+    margin-top: 5px;
+  }
+
+  .troopod-product-stage {
+    height: 520px;
+  }
+
+  .troopod-product-kitchen {
+    width: 250px;
+    height: 390px;
+    top: 35px;
+  }
+
+  .troopod-product-tap {
+    width: 215px;
+    height: 350px;
+    top: 55px;
+  }
+
+  .troopod-product-metal {
+    width: 205px;
+    height: 330px;
+    top: 70px;
+  }
+
+  .troopod-price-card {
+    bottom: 50px;
+    min-width: 190px;
+    padding: 12px 16px;
+  }
+
+  .troopod-price-value strong {
+    font-size: 22px;
+  }
+
+  .troopod-product-dots {
+    bottom: 12px;
+  }
+
+}
+
+/* ---------------------------------------------------------
+   SMALL PHONES
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-hero-grid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .troopod-hero-title {
+    font-size: 60px;
+  }
+
+  .troopod-hero-product {
+    min-height: 460px;
+  }
+
+  .troopod-product-stage {
+    height: 460px;
+  }
+}
+
+
+/* =========================================================
+   PURELANE PRODUCT SVG ASSETS
+   ========================================================= */
+
+.troopod-product-kitchen {
+  width: 340px;
+  height: 500px;
+  left: 50%;
+  top: 55px;
+  transform: translateX(-50%);
+  background-image: url('{{ "kitchen-bottle.svg" | asset_url }}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.troopod-product-tap {
+  width: 290px;
+  height: 470px;
+  left: 28%;
+  top: 75px;
+  transform: translateX(-50%);
+  background-image: url('{{ "tap-bottle.svg" | asset_url }}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.troopod-product-metal {
+  width: 280px;
+  height: 440px;
+  left: 72%;
+  top: 95px;
+  transform: translateX(-50%);
+  background-image: url('{{ "metal-bottle.svg" | asset_url }}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+/* =========================================================
+   SECTION 2 — SOURCED FROM NATURE
+   ========================================================= */
+
+.troopod-ingredients {
+  background: #f3eee4;
+  color: #183d32;
+  padding: 110px 40px 120px;
+  overflow: hidden;
+}
+
+.troopod-ingredients-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.troopod-section-heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.troopod-section-heading h2 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.troopod-section-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 26px auto 0;
+  max-width: 260px;
+  color: #183d32;
+}
+
+.troopod-section-rule span {
+  display: block;
+  height: 1px;
+  flex: 1;
+  background: rgba(24, 61, 50, 0.35);
+}
+
+.troopod-section-rule svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.troopod-ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.troopod-ingredient-card {
+  min-height: 330px;
+  padding: 42px 30px 38px;
+  border: 1px solid rgba(24, 61, 50, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.32);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.troopod-ingredient-card:hover {
+  transform: translateY(-7px);
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 18px 45px rgba(24, 61, 50, 0.08);
+}
+
+.troopod-ingredient-art {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #183d32;
+}
+
+.troopod-ingredient-art svg {
+  width: 115px;
+  height: 115px;
+}
+
+.troopod-ingredient-card h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.troopod-ingredient-card p {
+  max-width: 270px;
+  margin: 0;
+  color: rgba(24, 61, 50, 0.72);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-ingredients {
+    padding: 75px 18px 80px;
+  }
+
+  .troopod-section-heading {
+    margin-bottom: 45px;
+  }
+
+  .troopod-section-heading h2 {
+    font-size: clamp(42px, 13vw, 60px);
+  }
+
+  .troopod-section-rule {
+    margin-top: 20px;
+    max-width: 210px;
+  }
+
+  .troopod-ingredients-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .troopod-ingredient-card {
+    min-height: 290px;
+    padding: 32px 24px;
+  }
+
+  .troopod-ingredient-art {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 20px;
+  }
+
+  .troopod-ingredient-art svg {
+    width: 95px;
+    height: 95px;
+  }
+
+  .troopod-ingredient-card h3 {
+    font-size: 25px;
+  }
+
+  .troopod-ingredient-card p {
+    font-size: 14px;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   SMALL PHONES
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-ingredients {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .troopod-ingredient-card {
+    min-height: 275px;
+    padding: 28px 18px;
+  }
+
+  .troopod-ingredient-art {
+    width: 95px;
+    height: 95px;
+  }
+
+  .troopod-ingredient-art svg {
+    width: 85px;
+    height: 85px;
+  }
+
+  .troopod-ingredient-card h3 {
+    font-size: 23px;
+  }
+}
+/* =========================================================
+   SECTION 3 — WHY IT WORKS
+   ========================================================= */
+
+.troopod-why {
+  background: #183d32;
+  color: #f5f0e7;
+  padding: 115px 40px 120px;
+  overflow: hidden;
+}
+
+.troopod-why-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.troopod-why-heading {
+  max-width: 760px;
+  margin: 0 auto 75px;
+  text-align: center;
+}
+
+.troopod-eyebrow {
+  margin: 0 0 20px;
+  color: #b5d5a8;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.troopod-why-heading h2 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.troopod-why-description {
+  max-width: 620px;
+  margin: 30px auto 0;
+  color: rgba(245, 240, 231, 0.72);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.troopod-why-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  color: #f5f0e7;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(245, 240, 231, 0.45);
+  padding-bottom: 5px;
+}
+
+.troopod-why-link:hover {
+  border-color: #b5d5a8;
+  color: #b5d5a8;
+}
+
+.troopod-why-link span {
+  font-size: 17px;
+}
+
+
+/* ---------------------------------------------------------
+   FEATURES / STATS
+   --------------------------------------------------------- */
+
+.troopod-why-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(245, 240, 231, 0.18);
+  border-bottom: 1px solid rgba(245, 240, 231, 0.18);
+}
+
+.troopod-why-feature,
+.troopod-why-stat {
+  min-height: 250px;
+  padding: 38px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.troopod-why-feature + .troopod-why-stat,
+.troopod-why-stat + .troopod-why-stat {
+  border-left: 1px solid rgba(245, 240, 231, 0.18);
+}
+
+.troopod-why-feature-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(181, 213, 168, 0.55);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b5d5a8;
+  font-size: 20px;
+}
+
+.troopod-why-feature h3,
+.troopod-why-stat h4 {
+  margin: 0 0 10px;
+  font-weight: 500;
+}
+
+.troopod-why-feature h3 {
+  font-size: 18px;
+}
+
+.troopod-why-feature p,
+.troopod-why-stat p {
+  margin: 0;
+  color: rgba(245, 240, 231, 0.62);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.troopod-why-stat strong {
+  display: block;
+  margin-bottom: 18px;
+  color: #b5d5a8;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.troopod-why-stat h4 {
+  font-size: 15px;
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-why {
+    padding: 78px 20px 82px;
+  }
+
+  .troopod-why-heading {
+    margin-bottom: 50px;
+  }
+
+  .troopod-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .troopod-why-heading h2 {
+    font-size: clamp(40px, 12vw, 58px);
+  }
+
+  .troopod-why-description {
+    margin-top: 24px;
+    font-size: 15px;
+  }
+
+  .troopod-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .troopod-why-feature,
+  .troopod-why-stat {
+    min-height: auto;
+    padding: 28px 22px;
+  }
+
+  .troopod-why-feature + .troopod-why-stat,
+  .troopod-why-stat + .troopod-why-stat {
+    border-left: 0;
+    border-top: 1px solid rgba(245, 240, 231, 0.18);
+  }
+
+  .troopod-why-feature-icon {
+    margin-bottom: 18px;
+  }
+
+  .troopod-why-stat strong {
+    font-size: 42px;
+    margin-bottom: 12px;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   SMALL PHONES
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-why {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .troopod-why-heading h2 {
+    font-size: 40px;
+  }
+
+  .troopod-why-description {
+    font-size: 14px;
+  }
+
+  .troopod-why-feature,
+  .troopod-why-stat {
+    padding: 25px 18px;
+  }
+}
+/* =========================================================
+   SECTION 4 — BEST SELLING COMBOS
+   ========================================================= */
+
+.troopod-bundles {
+  background: #f2eee5;
+  color: #183d32;
+  padding: 110px 40px 105px;
+  overflow: hidden;
+}
+
+.troopod-bundles-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+.troopod-bundles-heading {
+  max-width: 720px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.troopod-bundles-heading .troopod-eyebrow {
+  color: #587c60;
+  margin-bottom: 18px;
+}
+
+.troopod-bundles-heading h2 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 72px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.troopod-bundles-heading > p:last-child {
+  max-width: 600px;
+  margin: 28px auto 0;
+  color: rgba(24, 61, 50, 0.68);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   BUNDLE GRID
+   --------------------------------------------------------- */
+
+.troopod-bundles-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+
+/* ---------------------------------------------------------
+   CARD
+   --------------------------------------------------------- */
+
+.troopod-bundle-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 610px;
+  padding: 24px 20px 20px;
+
+  background: #fffdf8;
+  border: 1px solid rgba(24, 61, 50, 0.12);
+  border-radius: 18px;
+
+  box-shadow: 0 14px 35px rgba(24, 61, 50, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.troopod-bundle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(24, 61, 50, 0.12);
+}
+
+
+/* Featured bundle */
+
+.troopod-bundle-featured {
+  background: #183d32;
+  color: #f5f0e7;
+  border-color: #183d32;
+}
+
+.troopod-bundle-featured p {
+  color: rgba(245, 240, 231, 0.68);
+}
+
+.troopod-bundle-featured small {
+  color: rgba(245, 240, 231, 0.55);
+}
+
+
+/* ---------------------------------------------------------
+   SAVINGS LABEL
+   --------------------------------------------------------- */
+
+.troopod-bundle-save {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #55745c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.troopod-bundle-featured .troopod-bundle-save {
+  color: #b5d5a8;
+}
+
+.troopod-bundle-save span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #dfead8;
+  color: #315a45;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.troopod-bundle-featured .troopod-bundle-save span {
+  background: rgba(181, 213, 168, 0.16);
+  color: #b5d5a8;
+}
+
+
+/* ---------------------------------------------------------
+   BENEFITS
+   --------------------------------------------------------- */
+
+.troopod-bundle-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  margin: 22px 0 28px;
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid rgba(24, 61, 50, 0.12);
+}
+
+.troopod-bundle-featured .troopod-bundle-benefits {
+  border-color: rgba(245, 240, 231, 0.18);
+}
+
+.troopod-bundle-benefits span {
+  position: relative;
+  padding-left: 17px;
+
+  color: rgba(24, 61, 50, 0.72);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.troopod-bundle-featured .troopod-bundle-benefits span {
+  color: rgba(245, 240, 231, 0.76);
+}
+
+.troopod-bundle-benefits span::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: #6d916b;
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   TITLE
+   --------------------------------------------------------- */
+
+.troopod-bundle-card h3 {
+  margin: 0 0 8px;
+
+  font-size: 23px;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.troopod-bundle-count {
+  display: block;
+  margin-bottom: 14px;
+
+  color: rgba(24, 61, 50, 0.5);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.troopod-bundle-featured .troopod-bundle-count {
+  color: rgba(245, 240, 231, 0.52);
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.troopod-bundle-card > p {
+  margin: 0;
+
+  color: rgba(24, 61, 50, 0.66);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.troopod-bundle-featured > p {
+  color: rgba(245, 240, 231, 0.68);
+}
+
+
+/* ---------------------------------------------------------
+   PRICE
+   --------------------------------------------------------- */
+
+.troopod-bundle-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  margin-top: auto;
+  padding-top: 25px;
+}
+
+.troopod-bundle-price strong {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.troopod-bundle-price del {
+  color: rgba(24, 61, 50, 0.42);
+  font-size: 12px;
+}
+
+.troopod-bundle-featured .troopod-bundle-price del {
+  color: rgba(245, 240, 231, 0.4);
+}
+
+.troopod-bundle-price span {
+  color: #5f805e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.troopod-bundle-featured .troopod-bundle-price span {
+  color: #b5d5a8;
+}
+
+
+/* ---------------------------------------------------------
+   TAX / COD
+   --------------------------------------------------------- */
+
+.troopod-bundle-card small {
+  display: block;
+  margin-top: 10px;
+
+  color: rgba(24, 61, 50, 0.46);
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTON
+   --------------------------------------------------------- */
+
+.troopod-bundle-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 46px;
+  margin-top: 18px;
+
+  border-radius: 999px;
+
+  background: #183d32;
+  color: #f5f0e7;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.troopod-bundle-button:hover {
+  background: #315a45;
+  transform: translateY(-1px);
+}
+
+.troopod-bundle-featured .troopod-bundle-button {
+  background: #b5d5a8;
+  color: #183d32;
+}
+
+.troopod-bundle-featured .troopod-bundle-button:hover {
+  background: #d0e3c7;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+.troopod-bundles-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.troopod-bundles-footer > span {
+  display: block;
+
+  color: #55745c;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.troopod-bundles-footer p {
+  max-width: 650px;
+  margin: 10px auto 0;
+
+  color: rgba(24, 61, 50, 0.55);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+
+  .troopod-bundles {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .troopod-bundles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .troopod-bundle-card {
+    min-height: 560px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-bundles {
+    padding: 78px 18px 80px;
+  }
+
+  .troopod-bundles-heading {
+    margin-bottom: 45px;
+  }
+
+  .troopod-bundles-heading h2 {
+    font-size: 46px;
+  }
+
+  .troopod-bundles-heading > p:last-child {
+    font-size: 14px;
+  }
+
+  .troopod-bundles-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 13px;
+
+    margin-left: -18px;
+    margin-right: -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 12px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .troopod-bundles-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .troopod-bundle-card {
+    flex: 0 0 82%;
+    min-height: 550px;
+
+    scroll-snap-align: start;
+  }
+
+  .troopod-bundle-card:hover {
+    transform: none;
+  }
+
+  .troopod-bundles-footer {
+    margin-top: 20px;
+  }
+
+  .troopod-bundles-footer > span {
+    font-size: 10px;
+  }
+
+  .troopod-bundles-footer p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-bundles {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .troopod-bundles-heading h2 {
+    font-size: 40px;
+  }
+
+  .troopod-bundle-card {
+    flex-basis: 88%;
+    padding: 22px 18px 18px;
+  }
+
+  .troopod-bundle-card h3 {
+    font-size: 21px;
+  }
+
+  .troopod-bundle-price strong {
+    font-size: 27px;
+  }
+}
+/* =========================================================
+   SECTION 5 — BUILD YOUR BUNDLE
+   ========================================================= */
+
+.troopod-build-bundle {
+  background: #183d32;
+  color: #f5f0e7;
+  padding: 110px 40px 115px;
+  overflow: hidden;
+}
+
+.troopod-build-bundle-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+.troopod-build-bundle-heading {
+  max-width: 720px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.troopod-build-bundle-heading .troopod-eyebrow {
+  color: #b5d5a8;
+  margin-bottom: 18px;
+}
+
+.troopod-build-bundle-heading h2 {
+  margin: 0;
+  color: #f5f0e7;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.troopod-build-bundle-heading > p:last-child {
+  max-width: 620px;
+  margin: 28px auto 0;
+  color: rgba(245, 240, 231, 0.68);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   CARDS
+   --------------------------------------------------------- */
+
+.troopod-build-bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.troopod-build-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 430px;
+  padding: 30px 28px 26px;
+
+  background: #f8f4eb;
+  color: #183d32;
+
+  border: 1px solid rgba(245, 240, 231, 0.12);
+  border-radius: 20px;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.troopod-build-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   MOST POPULAR CARD
+   --------------------------------------------------------- */
+
+.troopod-build-card-popular {
+  background: #b5d5a8;
+  border-color: #b5d5a8;
+}
+
+.troopod-build-popular {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  background: #183d32;
+  color: #b5d5a8;
+
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* ---------------------------------------------------------
+   CARD TOP
+   --------------------------------------------------------- */
+
+.troopod-build-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding-bottom: 24px;
+
+  border-bottom: 1px solid rgba(24, 61, 50, 0.14);
+}
+
+.troopod-build-label {
+  display: block;
+  padding-top: 3px;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.troopod-build-card-top strong {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+
+  font-size: 52px;
+  line-height: 0.9;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.troopod-build-card-top strong small {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+
+/* ---------------------------------------------------------
+   PRICE
+   --------------------------------------------------------- */
+
+.troopod-build-price {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+
+  margin-top: 28px;
+}
+
+.troopod-build-price strong {
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.troopod-build-price del {
+  color: rgba(24, 61, 50, 0.45);
+  font-size: 13px;
+}
+
+.troopod-build-per-product {
+  margin: 8px 0 0;
+
+  color: rgba(24, 61, 50, 0.56);
+  font-size: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   LIST
+   --------------------------------------------------------- */
+
+.troopod-build-card ul {
+  margin: 25px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.troopod-build-card li {
+  position: relative;
+
+  margin-bottom: 11px;
+  padding-left: 21px;
+
+  color: rgba(24, 61, 50, 0.72);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.troopod-build-card li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: #62865e;
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   BUTTON
+   --------------------------------------------------------- */
+
+.troopod-build-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 48px;
+
+  margin-top: auto;
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  background: #183d32;
+  color: #f5f0e7;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.troopod-build-button:hover {
+  background: #315a45;
+  transform: translateY(-1px);
+}
+
+
+/* ---------------------------------------------------------
+   POPULAR CARD BUTTON
+   --------------------------------------------------------- */
+
+.troopod-build-card-popular .troopod-build-button {
+  background: #f5f0e7;
+  color: #183d32;
+}
+
+.troopod-build-card-popular .troopod-build-button:hover {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  .troopod-build-bundle {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .troopod-build-bundle-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .troopod-build-card {
+    min-height: 390px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-build-bundle {
+    padding: 78px 18px 82px;
+  }
+
+  .troopod-build-bundle-heading {
+    margin-bottom: 45px;
+  }
+
+  .troopod-build-bundle-heading h2 {
+    font-size: 46px;
+  }
+
+  .troopod-build-bundle-heading > p:last-child {
+    font-size: 14px;
+  }
+
+  .troopod-build-bundle-grid {
+    display: flex;
+    overflow-x: auto;
+
+    gap: 14px;
+
+    margin-left: -18px;
+    margin-right: -18px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 12px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .troopod-build-bundle-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .troopod-build-card {
+    flex: 0 0 84%;
+    min-height: 410px;
+
+    scroll-snap-align: start;
+  }
+
+  .troopod-build-card:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-build-bundle {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .troopod-build-bundle-heading h2 {
+    font-size: 40px;
+  }
+
+  .troopod-build-card {
+    flex-basis: 88%;
+    padding: 25px 21px 22px;
+  }
+
+  .troopod-build-card-top strong {
+    font-size: 46px;
+  }
+
+  .troopod-build-price strong {
+    font-size: 30px;
+  }
+}
+/* =========================================================
+   SECTION 6 — BESTSELLERS
+   ========================================================= */
+
+.troopod-bestsellers {
+  background: #f7f3ea;
+  color: #183d32;
+  padding: 105px 40px 110px;
+  overflow: hidden;
+}
+
+.troopod-bestsellers-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+.troopod-bestsellers-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.troopod-bestsellers-heading .troopod-eyebrow {
+  color: #5d8063;
+  margin-bottom: 18px;
+}
+
+.troopod-bestsellers-heading h2 {
+  margin: 0;
+
+  color: #183d32;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+
+/* ---------------------------------------------------------
+   PRODUCT GRID
+   --------------------------------------------------------- */
+
+.troopod-bestsellers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   PRODUCT CARD
+   --------------------------------------------------------- */
+
+.troopod-product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  background: #fffdf8;
+  border: 1px solid rgba(24, 61, 50, 0.1);
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 32px rgba(24, 61, 50, 0.06);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.troopod-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 42px rgba(24, 61, 50, 0.11);
+}
+
+
+/* ---------------------------------------------------------
+   IMAGE AREA
+   --------------------------------------------------------- */
+
+.troopod-product-card-image {
+  position: relative;
+
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eee9dd;
+}
+
+
+/* Placeholder until actual product images are connected */
+
+.troopod-product-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 155px;
+  height: 215px;
+
+  border-radius: 20px;
+
+  background: #dfe8d8;
+  color: #55745c;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+
+  box-shadow: 0 18px 30px rgba(24, 61, 50, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   BADGE
+   --------------------------------------------------------- */
+
+.troopod-product-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  z-index: 2;
+
+  padding: 7px 10px;
+
+  border-radius: 999px;
+
+  background: #183d32;
+  color: #f5f0e7;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.troopod-product-badge-rated {
+  background: #d9e6d3;
+  color: #315a45;
+}
+
+.troopod-product-badge-new {
+  background: #e9dfc9;
+  color: #725c34;
+}
+
+
+/* ---------------------------------------------------------
+   PRODUCT INFO
+   --------------------------------------------------------- */
+
+.troopod-product-card-info {
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px 20px 20px;
+
+  flex: 1;
+}
+
+.troopod-product-card-info h3 {
+  margin: 0;
+
+  color: #183d32;
+
+  font-size: 18px;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+
+/* ---------------------------------------------------------
+   RATING
+   --------------------------------------------------------- */
+
+.troopod-product-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin-top: 12px;
+
+  font-size: 11px;
+}
+
+.troopod-product-rating strong {
+  color: #315a45;
+}
+
+.troopod-product-rating span {
+  color: rgba(24, 61, 50, 0.5);
+}
+
+
+/* ---------------------------------------------------------
+   PRICE
+   --------------------------------------------------------- */
+
+.troopod-product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+
+  margin-top: 15px;
+}
+
+.troopod-product-price strong {
+  color: #183d32;
+
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.troopod-product-price del {
+  color: rgba(24, 61, 50, 0.4);
+
+  font-size: 12px;
+}
+
+.troopod-product-price span {
+  color: #5f805e;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* ---------------------------------------------------------
+   ADD TO CART
+   --------------------------------------------------------- */
+
+.troopod-product-add {
+  width: 100%;
+  min-height: 45px;
+
+  margin-top: 20px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #183d32;
+  color: #f5f0e7;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.troopod-product-add:hover {
+  background: #315a45;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 1000px) {
+
+  .troopod-bestsellers {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .troopod-bestsellers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-bestsellers {
+    padding: 78px 18px 82px;
+  }
+
+  .troopod-bestsellers-heading {
+    margin-bottom: 42px;
+  }
+
+  .troopod-bestsellers-heading h2 {
+    font-size: 46px;
+  }
+
+  .troopod-bestsellers-grid {
+    display: flex;
+
+    overflow-x: auto;
+
+    gap: 14px;
+
+    margin-left: -18px;
+    margin-right: -18px;
+
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 12px;
+
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+  }
+
+  .troopod-bestsellers-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .troopod-product-card {
+    flex: 0 0 76%;
+
+    scroll-snap-align: start;
+  }
+
+  .troopod-product-card:hover {
+    transform: none;
+  }
+
+  .troopod-product-card-image {
+    min-height: 270px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-bestsellers {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .troopod-bestsellers-heading h2 {
+    font-size: 40px;
+  }
+
+  .troopod-product-card {
+    flex-basis: 84%;
+  }
+
+  .troopod-product-card-image {
+    min-height: 250px;
+  }
+
+  .troopod-product-placeholder {
+    width: 135px;
+    height: 190px;
+  }
+
+  .troopod-product-card-info {
+    padding: 20px 17px 18px;
+  }
+
+  .troopod-product-card-info h3 {
+    font-size: 17px;
+  }
+}
+/* =========================================================
+   SECTION 7 — THE SMARTER WAY TO SHOP
+   ========================================================= */
+
+.troopod-bundle-benefits {
+  background: #183d32;
+  color: #f5f0e7;
+  padding: 110px 40px 115px;
+  overflow: hidden;
+}
+
+.troopod-bundle-benefits-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+
+/* ---------------------------------------------------------
+   HEADING
+   --------------------------------------------------------- */
+
+.troopod-bundle-benefits-heading {
+  max-width: 760px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.troopod-bundle-benefits-heading .troopod-eyebrow {
+  color: #b5d5a8;
+  margin-bottom: 18px;
+}
+
+.troopod-bundle-benefits-heading h2 {
+  margin: 0;
+  color: #f5f0e7;
+  font-size: clamp(44px, 6vw, 70px);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+
+/* ---------------------------------------------------------
+   BENEFIT GRID
+   --------------------------------------------------------- */
+
+.troopod-bundle-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+
+  background: rgba(245, 240, 231, 0.18);
+
+  border: 1px solid rgba(245, 240, 231, 0.18);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   BENEFIT CARD
+   --------------------------------------------------------- */
+
+.troopod-benefit-card {
+  min-height: 260px;
+  padding: 28px 25px 30px;
+
+  background: #183d32;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.troopod-benefit-card:hover {
+  background: #214b3d;
+}
+
+
+/* ---------------------------------------------------------
+   NUMBER
+   --------------------------------------------------------- */
+
+.troopod-benefit-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid rgba(181, 213, 168, 0.45);
+  border-radius: 50%;
+
+  color: #b5d5a8;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+
+/* ---------------------------------------------------------
+   TITLE
+   --------------------------------------------------------- */
+
+.troopod-benefit-card h3 {
+  margin: auto 0 13px;
+
+  color: #f5f0e7;
+
+  font-size: 22px;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.troopod-benefit-card p {
+  margin: 0;
+
+  max-width: 210px;
+
+  color: rgba(245, 240, 231, 0.62);
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media screen and (max-width: 950px) {
+
+  .troopod-bundle-benefits {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .troopod-bundle-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .troopod-benefit-card {
+    min-height: 230px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-bundle-benefits {
+    padding: 78px 18px 82px;
+  }
+
+  .troopod-bundle-benefits-heading {
+    margin-bottom: 45px;
+  }
+
+  .troopod-bundle-benefits-heading h2 {
+    font-size: 46px;
+  }
+
+  .troopod-bundle-benefits-grid {
+    grid-template-columns: 1fr;
+
+    border-radius: 18px;
+  }
+
+  .troopod-benefit-card {
+    min-height: 190px;
+    padding: 23px 22px 25px;
+  }
+
+  .troopod-benefit-card h3 {
+    margin-top: 35px;
+    margin-bottom: 10px;
+    font-size: 21px;
+  }
+
+  .troopod-benefit-card p {
+    max-width: 280px;
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-bundle-benefits {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .troopod-bundle-benefits-heading h2 {
+    font-size: 40px;
+  }
+
+  .troopod-benefit-card {
+    min-height: 180px;
+  }
+}
+/* =========================================================
+   SECTION 8 — PURELANE CLUB
+   ========================================================= */
+
+.troopod-club {
+  position: relative;
+  overflow: hidden;
+
+  background: #b5d5a8;
+  color: #183d32;
+
+  padding: 105px 40px 110px;
+}
+
+.troopod-club::before {
+  content: "";
+
+  position: absolute;
+  width: 420px;
+  height: 420px;
+
+  top: -210px;
+  right: -120px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(24, 61, 50, 0.12);
+}
+
+.troopod-club::after {
+  content: "";
+
+  position: absolute;
+  width: 300px;
+  height: 300px;
+
+  bottom: -180px;
+  left: -100px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(24, 61, 50, 0.1);
+}
+
+.troopod-club-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.troopod-club-content {
+  text-align: center;
+}
+
+.troopod-club .troopod-eyebrow {
+  margin-bottom: 18px;
+
+  color: #315a45;
+}
+
+.troopod-club h2 {
+  max-width: 760px;
+  margin: 0 auto;
+
+  color: #183d32;
+
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 0.98;
+  font-weight: 500;
+
+  letter-spacing: -0.045em;
+}
+
+.troopod-club-description {
+  max-width: 520px;
+
+  margin: 25px auto 0;
+
+  color: rgba(24, 61, 50, 0.68);
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   EMAIL FORM
+   --------------------------------------------------------- */
+
+.troopod-club-form {
+  display: flex;
+  align-items: stretch;
+
+  max-width: 600px;
+
+  margin: 38px auto 0;
+
+  padding: 5px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  border: 1px solid rgba(24, 61, 50, 0.14);
+  border-radius: 999px;
+
+  box-shadow: 0 12px 35px rgba(24, 61, 50, 0.08);
+}
+
+.troopod-club-form input {
+  flex: 1;
+
+  min-width: 0;
+  min-height: 48px;
+
+  padding: 12px 18px;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #183d32;
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.troopod-club-form input::placeholder {
+  color: rgba(24, 61, 50, 0.48);
+}
+
+.troopod-club-form button {
+  flex-shrink: 0;
+
+  min-height: 48px;
+
+  padding: 12px 24px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #183d32;
+  color: #f5f0e7;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.troopod-club-form button:hover {
+  background: #315a45;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 749px) {
+
+  .troopod-club {
+    padding: 78px 18px 82px;
+  }
+
+  .troopod-club h2 {
+    font-size: 46px;
+  }
+
+  .troopod-club-description {
+    font-size: 14px;
+  }
+
+  .troopod-club-form {
+    display: flex;
+    flex-direction: column;
+
+    padding: 6px;
+
+    border-radius: 18px;
+
+    gap: 6px;
+  }
+
+  .troopod-club-form input {
+    width: 100%;
+
+    min-height: 48px;
+
+    text-align: center;
+  }
+
+  .troopod-club-form button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media screen and (max-width: 420px) {
+
+  .troopod-club {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .troopod-club h2 {
+    font-size: 40px;
+  }
+
+  .troopod-club-description {
+    font-size: 13px;
+  }
+}
