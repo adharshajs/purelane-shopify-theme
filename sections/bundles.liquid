@@ -4,237 +4,292 @@
 
     <div class="troopod-bundles-heading">
 
-      <p class="troopod-eyebrow">Pre-built to save you money</p>
+      {% if section.settings.eyebrow != blank %}
+        <p class="troopod-eyebrow">
+          {{ section.settings.eyebrow }}
+        </p>
+      {% endif %}
 
-      <h2>Best selling combos</h2>
+      <h2>{{ section.settings.heading }}</h2>
 
-      <p>
-        Swipe through the boxes people order most. Each one is already priced
-        below buying the same products on their own.
-      </p>
+      {% if section.settings.description != blank %}
+        <p>{{ section.settings.description }}</p>
+      {% endif %}
 
     </div>
-
 
     <div class="troopod-bundles-grid">
 
-      <!-- Kitchen essentials -->
-      <article class="troopod-bundle-card">
+      {% for block in section.blocks %}
 
-        <div class="troopod-bundle-save">
-          You save ₹398
-          <span>Most popular</span>
-        </div>
+        <article
+          class="troopod-bundle-card{% if block.settings.featured %} troopod-bundle-featured{% endif %}"
+          {{ block.shopify_attributes }}
+        >
 
-        <div class="troopod-bundle-benefits">
-          <span>Cuts grease instantly</span>
-          <span>Squeaky clean dishes</span>
-          <span>Melts hard water stains</span>
-        </div>
+          {% if block.settings.badge != blank %}
+            <div class="troopod-bundle-save">
+              {{ block.settings.badge }}
 
-        <h3>Kitchen essentials</h3>
+              {% if block.settings.badge_label != blank %}
+                <span>{{ block.settings.badge_label }}</span>
+              {% endif %}
+            </div>
+          {% endif %}
 
-        <strong class="troopod-bundle-count">
-          3 products
-        </strong>
+          {% if block.settings.products != blank %}
+            <div class="troopod-bundle-products">
+              {% for product in block.settings.products %}
+                <div class="troopod-bundle-product">
+                  {{
+                    product.featured_image
+                    | image_url: width: 180
+                    | image_tag:
+                      loading: 'lazy',
+                      alt: product.title
+                  }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
 
-        <p>
-          Includes: Foaming Kitchen Cleaner, Dishwash Gel & Tap Cleaner.
-          Everything for a sparkling kitchen, no need to pick separately.
-        </p>
+          {% if block.settings.benefits != blank %}
+            <div class="troopod-bundle-benefits">
+              {% assign benefits = block.settings.benefits | newline_to_br | split: '<br />' %}
 
-        <div class="troopod-bundle-price">
-          <strong>₹499</strong>
-          <del>₹897</del>
-          <span>Save ₹398</span>
-        </div>
+              {% for benefit in benefits %}
+                <span>{{ benefit | strip_html | strip }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
 
-        <small>
-          Inclusive of all taxes · COD available
-        </small>
+          <h3>{{ block.settings.title }}</h3>
 
-        <a href="#bundles" class="troopod-bundle-button">
-          Shop bundle
-        </a>
+          {% if block.settings.product_count != blank %}
+            <strong class="troopod-bundle-count">
+              {{ block.settings.product_count }} products
+            </strong>
+          {% endif %}
 
-      </article>
+          {% if block.settings.description != blank %}
+            <p>{{ block.settings.description }}</p>
+          {% endif %}
 
+          <div class="troopod-bundle-price">
 
-      <!-- Laundry care bundle -->
-      <article class="troopod-bundle-card">
+            {% if block.settings.price != blank %}
+              <strong>{{ block.settings.price }}</strong>
+            {% endif %}
 
-        <div class="troopod-bundle-save">
-          You save ₹448
-        </div>
+            {% if block.settings.compare_price != blank %}
+              <del>{{ block.settings.compare_price }}</del>
+            {% endif %}
 
-        <div class="troopod-bundle-benefits">
-          <span>Removes tough stains & odour</span>
-          <span>Softens & freshens every wash</span>
-          <span>Deep-cleans your machine</span>
-        </div>
+            {% if block.settings.saving != blank %}
+              <span>{{ block.settings.saving }}</span>
+            {% endif %}
 
-        <h3>Laundry care bundle</h3>
+          </div>
 
-        <strong class="troopod-bundle-count">
-          3 products
-        </strong>
+          {% if block.settings.terms != blank %}
+            <small>{{ block.settings.terms }}</small>
+          {% endif %}
 
-        <p>
-          Includes: Laundry Detergent, Fabric Conditioner &
-          Machine Cleaner Powder. Softer, fresher wash, all in one box.
-        </p>
+          {% if block.settings.button_label != blank %}
+            <a
+              href="{{ block.settings.button_link }}"
+              class="troopod-bundle-button"
+            >
+              {{ block.settings.button_label }}
+            </a>
+          {% endif %}
 
-        <div class="troopod-bundle-price">
-          <strong>₹499</strong>
-          <del>₹947</del>
-          <span>Save ₹448</span>
-        </div>
+        </article>
 
-        <small>
-          Inclusive of all taxes · COD available
-        </small>
-
-        <a href="#bundles" class="troopod-bundle-button">
-          Shop bundle
-        </a>
-
-      </article>
-
-
-      <!-- Complete home bundle -->
-      <article class="troopod-bundle-card troopod-bundle-featured">
-
-        <div class="troopod-bundle-save">
-          Biggest saving
-          <span>Best value</span>
-        </div>
-
-        <div class="troopod-bundle-benefits">
-          <span>Cuts grease instantly</span>
-          <span>Kills 99.9% germs</span>
-          <span>Gentle hydration for hands</span>
-        </div>
-
-        <h3>Complete home bundle</h3>
-
-        <strong class="troopod-bundle-count">
-          5 products
-        </strong>
-
-        <p>
-          Includes: Kitchen Cleaner, Laundry Detergent, Floor Cleaner,
-          Toilet Cleaner & Handwash. Our biggest saving box.
-        </p>
-
-        <div class="troopod-bundle-price">
-          <strong>₹799</strong>
-          <del>₹1,495</del>
-          <span>Save ₹696</span>
-        </div>
-
-        <small>
-          Inclusive of all taxes · COD available
-        </small>
-
-        <a href="#bundles" class="troopod-bundle-button">
-          Shop bundle
-        </a>
-
-      </article>
-
-
-      <!-- Bathroom deep clean -->
-      <article class="troopod-bundle-card">
-
-        <div class="troopod-bundle-save">
-          You save ₹398
-        </div>
-
-        <div class="troopod-bundle-benefits">
-          <span>Kills 99.9% germs</span>
-          <span>Melts hard water stains</span>
-          <span>Scrubs away soap scum</span>
-        </div>
-
-        <h3>Bathroom deep clean</h3>
-
-        <strong class="troopod-bundle-count">
-          3 products
-        </strong>
-
-        <p>
-          Includes: Toilet Cleaner, Tap Cleaner & Magic Eraser.
-          A complete bathroom refresh in one box.
-        </p>
-
-        <div class="troopod-bundle-price">
-          <strong>₹499</strong>
-          <del>₹897</del>
-          <span>Save ₹398</span>
-        </div>
-
-        <small>
-          Inclusive of all taxes · COD available
-        </small>
-
-        <a href="#bundles" class="troopod-bundle-button">
-          Shop bundle
-        </a>
-
-      </article>
-
-
-      <!-- Hard water solution -->
-      <article class="troopod-bundle-card">
-
-        <div class="troopod-bundle-save">
-          You save ₹249
-        </div>
-
-        <div class="troopod-bundle-benefits">
-          <span>Melts hard water stains</span>
-          <span>Fights limescale in the bowl</span>
-        </div>
-
-        <h3>Hard water solution kit</h3>
-
-        <strong class="troopod-bundle-count">
-          2 products
-        </strong>
-
-        <p>
-          Includes: Tap Cleaner & Toilet Cleaner.
-          A quick, focused fix for hard water stains across the home.
-        </p>
-
-        <div class="troopod-bundle-price">
-          <strong>₹349</strong>
-          <del>₹598</del>
-          <span>Save ₹249</span>
-        </div>
-
-        <small>
-          Inclusive of all taxes · COD available
-        </small>
-
-        <a href="#bundles" class="troopod-bundle-button">
-          Shop bundle
-        </a>
-
-      </article>
+      {% endfor %}
 
     </div>
 
-
-    <div class="troopod-bundles-footer">
-      <span>Swipe for more combos</span>
-
-      <p>
-        Tapping "Shop bundle" opens the bundle picker with these products
-        already added. You can still swap anything before you pay.
-      </p>
-    </div>
+    {% if section.settings.footer_text != blank %}
+      <div class="troopod-bundles-footer">
+        <span>{{ section.settings.footer_label }}</span>
+        <p>{{ section.settings.footer_text }}</p>
+      </div>
+    {% endif %}
 
   </div>
 
 </section>
+
+{% schema %}
+{
+  "name": "Bundles",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Pre-built to save you money"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best selling combos"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Swipe through the boxes people order most. Each one is already priced below buying the same products on their own."
+    },
+    {
+      "type": "text",
+      "id": "footer_label",
+      "label": "Footer label",
+      "default": "More ways to save"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_text",
+      "label": "Footer text",
+      "default": "Choose the bundle that works best for your home."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bundle",
+      "name": "Bundle",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured bundle",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "You save ₹398"
+        },
+        {
+          "type": "text",
+          "id": "badge_label",
+          "label": "Badge label",
+          "default": "Most popular"
+        },
+        {
+          "type": "product_list",
+          "id": "products",
+          "label": "Products in bundle",
+          "limit": 5
+        },
+        {
+          "type": "textarea",
+          "id": "benefits",
+          "label": "Benefits",
+          "info": "Enter one benefit per line."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Bundle name",
+          "default": "Kitchen essentials"
+        },
+        {
+          "type": "text",
+          "id": "product_count",
+          "label": "Product count",
+          "default": "3"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Bundle price",
+          "default": "₹499"
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Compare-at price",
+          "default": "₹897"
+        },
+        {
+          "type": "text",
+          "id": "saving",
+          "label": "Saving text",
+          "default": "Save ₹398"
+        },
+        {
+          "type": "text",
+          "id": "terms",
+          "label": "Small print",
+          "default": "Inclusive of all taxes · COD available"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Shop bundle"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundles",
+      "blocks": [
+        {
+          "type": "bundle",
+          "settings": {
+            "featured": true,
+            "badge": "You save ₹398",
+            "badge_label": "Most popular",
+            "title": "Kitchen essentials",
+            "product_count": "3",
+            "price": "₹499",
+            "compare_price": "₹897",
+            "saving": "Save ₹398"
+          }
+        },
+        {
+          "type": "bundle",
+          "settings": {
+            "badge": "You save ₹448",
+            "title": "Laundry care bundle",
+            "product_count": "3",
+            "price": "₹499",
+            "compare_price": "₹947",
+            "saving": "Save ₹448"
+          }
+        },
+        {
+          "type": "bundle",
+          "settings": {
+            "badge": "Biggest saving",
+            "badge_label": "Best value",
+            "title": "Complete home bundle",
+            "product_count": "5",
+            "price": "₹799",
+            "compare_price": "₹1,495",
+            "saving": "Save ₹696"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
