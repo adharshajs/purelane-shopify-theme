@@ -2,85 +2,175 @@
   <div class="troopod-why-inner">
 
     <div class="troopod-why-heading">
-      <p class="troopod-eyebrow">Why it works</p>
+
+      {% if section.settings.eyebrow != blank %}
+        <p class="troopod-eyebrow">
+          {{ section.settings.eyebrow }}
+        </p>
+      {% endif %}
 
       <h2>
-        Tough on grime.<br>
-        Gentle on everything else.
+        {{ section.settings.heading }}
       </h2>
 
-      <p class="troopod-why-description">
-        Every formula is built on plant-derived cleansers and essential oils.
-        It behaves exactly like the cleaner you are used to, minus the things
-        you never signed up for.
-      </p>
+      {% if section.settings.description != blank %}
+        <p class="troopod-why-description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
 
-      <a class="troopod-why-link" href="#ingredients">
-        See the ingredient list
-        <span aria-hidden="true">↗</span>
-      </a>
+      {% if section.settings.link_label != blank %}
+        <a
+          class="troopod-why-link"
+          href="{{ section.settings.link_url }}"
+        >
+          {{ section.settings.link_label }}
+          <span aria-hidden="true">↗</span>
+        </a>
+      {% endif %}
+
     </div>
-
 
     <div class="troopod-why-grid">
 
-      <div class="troopod-why-feature">
-        <div class="troopod-why-feature-icon">
-          ✦
-        </div>
+      {% for block in section.blocks %}
+        <article
+          class="troopod-why-stat"
+          {{ block.shopify_attributes }}
+        >
 
-        <h3>Laundry detergent</h3>
+          {% if block.settings.icon != blank %}
+            <div class="troopod-why-feature-icon">
+              {{ block.settings.icon }}
+            </div>
+          {% endif %}
 
-        <p>
-          Tough on odour, soft on fabric
-        </p>
-      </div>
+          {% if block.settings.stat != blank %}
+            <strong>{{ block.settings.stat }}</strong>
+          {% endif %}
 
+          {% if block.settings.title != blank %}
+            <h4>{{ block.settings.title }}</h4>
+          {% endif %}
 
-      <div class="troopod-why-stat">
-        <strong>99.9%</strong>
+          {% if block.settings.description != blank %}
+            <p>{{ block.settings.description }}</p>
+          {% endif %}
 
-        <h4>Germ kill</h4>
-
-        <p>
-          Tested against germs and bacteria
-        </p>
-      </div>
-
-
-      <div class="troopod-why-stat">
-        <strong>0%</strong>
-
-        <h4>Sulphates</h4>
-
-        <p>
-          No SLS, chlorine or parabens
-        </p>
-      </div>
-
-
-      <div class="troopod-why-stat">
-        <strong>100%</strong>
-
-        <h4>Plant based</h4>
-
-        <p>
-          Cleansers derived from plants
-        </p>
-      </div>
-
-
-      <div class="troopod-why-stat">
-        <strong>4.8</strong>
-
-        <h4>Rated</h4>
-
-        <p>
-          Across 8,000+ verified reviews
-        </p>
-      </div>
+        </article>
+      {% endfor %}
 
     </div>
 
   </div>
 </section>
+
+{% schema %}
+{
+  "name": "Why it works",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Why it works"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Tough on grime. Gentle on everything else."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Every formula is built on plant-derived cleansers and essential oils. It behaves exactly like the cleaner you are used to, minus the things you never signed up for."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "See the ingredient list"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon or symbol",
+          "default": "✦"
+        },
+        {
+          "type": "text",
+          "id": "stat",
+          "label": "Large statistic",
+          "default": "99.9%"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Germ kill"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Tested against germs and bacteria"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why it works",
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "stat": "99.9%",
+            "title": "Germ kill",
+            "description": "Tested against germs and bacteria"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "stat": "0%",
+            "title": "Sulphates",
+            "description": "No SLS, chlorine or parabens"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "stat": "100%",
+            "title": "Plant based",
+            "description": "Cleansers derived from plants"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "stat": "4.8",
+            "title": "Rated",
+            "description": "Across verified customer reviews"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
