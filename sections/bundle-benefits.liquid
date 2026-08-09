@@ -4,88 +4,132 @@
 
     <div class="troopod-bundle-benefits-heading">
 
-      <p class="troopod-eyebrow">
-        The smarter way to shop
-      </p>
+      {% if section.settings.eyebrow != blank %}
+        <p class="troopod-eyebrow">
+          {{ section.settings.eyebrow }}
+        </p>
+      {% endif %}
 
       <h2>
-        Why bundles beat buying single
+        {{ section.settings.heading }}
       </h2>
 
     </div>
 
-
     <div class="troopod-bundle-benefits-grid">
 
-      <article class="troopod-benefit-card">
+      {% for block in section.blocks %}
 
-        <span class="troopod-benefit-number">
-          01
-        </span>
+        <article
+          class="troopod-benefit-card"
+          {{ block.shopify_attributes }}
+        >
 
-        <h3>
-          Save up to 45%
-        </h3>
+          <span class="troopod-benefit-number">
+            {{ block.settings.number }}
+          </span>
 
-        <p>
-          Versus buying the same products separately
-        </p>
+          <h3>
+            {{ block.settings.title }}
+          </h3>
 
-      </article>
+          <p>
+            {{ block.settings.description }}
+          </p>
 
+        </article>
 
-      <article class="troopod-benefit-card">
-
-        <span class="troopod-benefit-number">
-          02
-        </span>
-
-        <h3>
-          One flat price
-        </h3>
-
-        <p>
-          No calculators, no comparing carts
-        </p>
-
-      </article>
-
-
-      <article class="troopod-benefit-card">
-
-        <span class="troopod-benefit-number">
-          03
-        </span>
-
-        <h3>
-          Curated by experts
-        </h3>
-
-        <p>
-          Products picked to work well together
-        </p>
-
-      </article>
-
-
-      <article class="troopod-benefit-card">
-
-        <span class="troopod-benefit-number">
-          04
-        </span>
-
-        <h3>
-          Free shipping always
-        </h3>
-
-        <p>
-          Included on every bundle, all India
-        </p>
-
-      </article>
+      {% endfor %}
 
     </div>
 
   </div>
 
 </section>
+
+{% schema %}
+{
+  "name": "Bundle benefits",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The smarter way to shop"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why bundles beat buying single"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Save up to 45%"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Versus buying the same products separately"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundle benefits",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "number": "01",
+            "title": "Save up to 45%",
+            "description": "Versus buying the same products separately"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "number": "02",
+            "title": "One flat price",
+            "description": "No calculators, no comparing carts"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "number": "03",
+            "title": "Curated by experts",
+            "description": "Products picked to work well together"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "number": "04",
+            "title": "Free shipping always",
+            "description": "Included on every bundle, all India"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
