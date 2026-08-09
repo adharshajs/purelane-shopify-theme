@@ -1,125 +1,224 @@
 <section class="troopod-build-bundle" id="build-bundle">
-  <div class="troopod-build-bundle-inner">
 
-    <div class="troopod-build-bundle-heading">
-      <p class="troopod-eyebrow">Build your bundle</p>
+  <div class="troopod-build-bundle-heading">
 
-      <h2>One box. Every room.</h2>
-
-      <p>
-        Mix and match across kitchen, laundry, home and skin.
-        One flat price, no code needed, free shipping either way.
+    {% if section.settings.eyebrow != blank %}
+      <p class="troopod-eyebrow">
+        {{ section.settings.eyebrow }}
       </p>
-    </div>
+    {% endif %}
 
+    <h2>{{ section.settings.heading }}</h2>
 
-    <div class="troopod-build-bundle-grid">
-
-      <!-- Starter -->
-      <article class="troopod-build-card">
-
-        <div class="troopod-build-card-top">
-          <span class="troopod-build-label">Starter</span>
-
-          <strong>
-            2
-            <small>Products</small>
-          </strong>
-        </div>
-
-        <div class="troopod-build-price">
-          <strong>₹349</strong>
-          <del>₹598</del>
-        </div>
-
-        <p class="troopod-build-per-product">
-          Flat ₹174 per product
-        </p>
-
-        <ul>
-          <li>Pick any two products</li>
-          <li>Free shipping across India</li>
-        </ul>
-
-        <a href="#shop" class="troopod-build-button">
-          Build this box
-        </a>
-
-      </article>
-
-
-      <!-- Most popular -->
-      <article class="troopod-build-card troopod-build-card-popular">
-
-        <div class="troopod-build-popular">
-          Most popular
-        </div>
-
-        <div class="troopod-build-card-top">
-          <span class="troopod-build-label">Most popular</span>
-
-          <strong>
-            3
-            <small>Products</small>
-          </strong>
-        </div>
-
-        <div class="troopod-build-price">
-          <strong>₹499</strong>
-          <del>₹897</del>
-        </div>
-
-        <p class="troopod-build-per-product">
-          Flat ₹166 per product
-        </p>
-
-        <ul>
-          <li>Pick any three products</li>
-          <li>Covers kitchen and laundry</li>
-          <li>Free shipping across India</li>
-        </ul>
-
-        <a href="#shop" class="troopod-build-button">
-          Build this box
-        </a>
-
-      </article>
-
-
-      <!-- Whole home -->
-      <article class="troopod-build-card">
-
-        <div class="troopod-build-card-top">
-          <span class="troopod-build-label">Whole home</span>
-
-          <strong>
-            5
-            <small>Products</small>
-          </strong>
-        </div>
-
-        <div class="troopod-build-price">
-          <strong>₹799</strong>
-          <del>₹1,495</del>
-        </div>
-
-        <p class="troopod-build-per-product">
-          Flat ₹160 per product
-        </p>
-
-        <ul>
-          <li>Pick any five products</li>
-          <li>Every room in one order</li>
-          <li>Free shipping across India</li>
-        </ul>
-
-        <a href="#shop" class="troopod-build-button">
-          Build this box
-        </a>
-
-      </article>
-
-    </div>
+    <p>{{ section.settings.description }}</p>
 
   </div>
+
+  <div class="troopod-build-bundle-grid">
+
+    {% for block in section.blocks %}
+
+      <article
+        class="troopod-build-card{% if block.settings.popular %} troopod-build-card-popular{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+
+        {% if block.settings.popular %}
+          <div class="troopod-build-popular">
+            {{ block.settings.popular_label }}
+          </div>
+        {% endif %}
+
+        <div class="troopod-build-card-top">
+
+          <span class="troopod-build-label">
+            {{ block.settings.title }}
+          </span>
+
+          <strong>
+            {{ block.settings.product_count }}
+            <small>Products</small>
+          </strong>
+
+        </div>
+
+        <div class="troopod-build-price">
+
+          <strong>
+            {{ block.settings.price }}
+          </strong>
+
+          {% if block.settings.compare_price != blank %}
+            <del>{{ block.settings.compare_price }}</del>
+          {% endif %}
+
+        </div>
+
+        {% if block.settings.per_product != blank %}
+          <p class="troopod-build-per-product">
+            {{ block.settings.per_product }}
+          </p>
+        {% endif %}
+
+        {% if block.settings.features != blank %}
+          <ul>
+            {% assign features = block.settings.features | newline_to_br | split: '<br />' %}
+
+            {% for feature in features %}
+              <li>{{ feature | strip_html | strip }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if block.settings.button_label != blank %}
+          <a
+            href="{{ block.settings.button_link }}"
+            class="troopod-build-button"
+          >
+            {{ block.settings.button_label }}
+          </a>
+        {% endif %}
+
+      </article>
+
+    {% endfor %}
+
+  </div>
+
 </section>
+
+{% schema %}
+{
+  "name": "Build a bundle",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Build your bundle"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "One box. Every room."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Mix and match across kitchen, laundry, home and skin. One flat price, no code needed, free shipping either way."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Bundle tier",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "popular",
+          "label": "Mark as popular",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "popular_label",
+          "label": "Popular label",
+          "default": "Most popular"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tier name",
+          "default": "Starter"
+        },
+        {
+          "type": "text",
+          "id": "product_count",
+          "label": "Number of products",
+          "default": "2"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "₹349"
+        },
+        {
+          "type": "text",
+          "id": "compare_price",
+          "label": "Compare-at price",
+          "default": "₹598"
+        },
+        {
+          "type": "text",
+          "id": "per_product",
+          "label": "Per-product text",
+          "default": "Flat ₹174 per product"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features",
+          "info": "One feature per line."
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Build this box"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Build a bundle",
+      "blocks": [
+        {
+          "type": "tier",
+          "settings": {
+            "title": "Starter",
+            "product_count": "2",
+            "price": "₹349",
+            "compare_price": "₹598",
+            "per_product": "Flat ₹174 per product",
+            "features": "Pick any two products\nFree shipping across India"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "popular": true,
+            "title": "Most popular",
+            "product_count": "3",
+            "price": "₹499",
+            "compare_price": "₹897",
+            "per_product": "Flat ₹166 per product",
+            "features": "Pick any three products\nCovers kitchen and laundry\nFree shipping across India"
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "title": "Whole home",
+            "product_count": "5",
+            "price": "₹799",
+            "compare_price": "₹1,495",
+            "per_product": "Flat ₹160 per product",
+            "features": "Pick any five products\nEvery room in one order\nFree shipping across India"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
